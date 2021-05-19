@@ -1,0 +1,17 @@
+{
+  "name": "2021-typescript-scaffolding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "gitignore": "^0.6.0",
+    "typescript": "^4.2.4"
+  }
+}
