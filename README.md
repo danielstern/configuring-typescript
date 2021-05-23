@@ -16,6 +16,9 @@ install type definitions where needed
 
 II
 
+A common error is as follows:
+ Cannot compile modules using option 'outFile' unless the '--module' flag is 'amd' or 'system'.
+
 project outline
 description: ticket price upload and edit application
 components:

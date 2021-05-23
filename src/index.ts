@@ -1,4 +1,4 @@
-import Main from "./components/Main";
+import {Main} from "./Main";
 
 const message : String = "Hello world";
 
