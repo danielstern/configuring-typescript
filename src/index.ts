@@ -16,8 +16,16 @@ export interface TicketAppSchema {
     ticketInfo: TicketSchema[];
     
 }
+declare global {
 
-const ticketAppState = {
+    interface Window {
+        dispatchAction:any;
+    }
+    
+
+}
+
+let ticketAppState = {
 
     username: "Classy Classicals",
     ticketInfo: [{
@@ -39,6 +47,56 @@ const ticketAppState = {
     }]
 }
 
-const rendered : string = new Main(ticketAppState.username, ticketAppState.ticketInfo).render();
+const renderApp = ()=>{
 
-document.getElementById("App").innerHTML = rendered;
+    const rendered : string = new Main(ticketAppState.username, ticketAppState.ticketInfo).render();
+
+    document.getElementById("App").innerHTML = rendered;
+
+}
+
+renderApp();
+
+// export const incrementTicketQuantityAction = (ticketId: string, quantity : number) => {
+    
+//     return `{type:'increment-ticket-quantity', ticketIdId: '${ticketId}', quantity: ${quantity}}`;
+//     // const newState = incrementTicketQuantityReducer(state, quantity);
+//     // ticketAppState = newState;
+//     // renderApp();
+
+// }
+
+const reducer = (state : TicketAppSchema, action) : TicketAppSchema  => {
+
+    console.log("reducer", action);
+    switch (action.type) {
+
+        case "adjust-ticket-quantity":
+        return {
+            ... state,
+            ticketInfo: state.ticketInfo.map(ticket => ticket.ticketId === action.ticketId ? {...ticket, quantity: action.quantity} : ticket)
+        }
+            
+    }
+
+    return state;
+}
+
+// export const incrementTicketQuantityReducer = (state : TicketAppSchema, quantity : number)=>{
+    
+//     console.log("Reducer reducer reducer....");
+//     return {
+//         ... state,
+//         ticketInfo: state.ticketInfo.map(ticket => ticket)
+//     }
+
+// }
+
+window.dispatchAction = (action) => {
+
+    console.log("Dispatching", action);
+    ticketAppState = reducer(ticketAppState, action);
+    renderApp();
+    document.getElementById(action.fieldId).focus();
+    // dispatchAction
+}

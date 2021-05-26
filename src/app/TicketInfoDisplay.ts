@@ -1,15 +1,24 @@
 import { TicketSchema } from '../';
 
+console.log("Ticket change");
 export class TicketInfoDisplay {
 
     render() : string {
 
         return `<tr>
                     <td>
-                        ${this.ticketInfo.concertName}
+                        <input type="text" value="${this.ticketInfo.concertName}">
+                        
                     </td>
                     <td>
-                        ${this.ticketInfo.quantity}
+                        <input 
+                            type="number" 
+                            id="${this.ticketInfo.ticketId}"
+                            value="${this.ticketInfo.quantity}" 
+                            onchange="window.dispatchAction({type:'adjust-ticket-quantity', ticketId: '${this.ticketInfo.ticketId}', quantity: +event.target.value, fieldId: '${this.ticketInfo.ticketId}'})"
+        
+                        >
+                        
                     </td>
                     <td>
                         ${(new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(this.ticketInfo.price))}
@@ -17,6 +26,10 @@ export class TicketInfoDisplay {
                 </tr>
                 `
 
+    }
+
+    handle(){
+        console.log("handling");
     }
 
     constructor(private ticketInfo : TicketSchema) {
