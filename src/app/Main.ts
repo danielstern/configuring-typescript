@@ -1,8 +1,7 @@
 import { TicketAppSchema, TicketSchema } from '../';
+import { TicketInfoListDisplay } from './TicketInfoListDisplay'
 
-import { TicketInfoListDisplay } from './TicketInfoDisplay'
 export class Main {
-
     
     render() : string {
 
@@ -15,13 +14,9 @@ export class Main {
               </div>
             </div>
         `;
-    }
-
-    constructor(private username : string, private ticketInfo : TicketSchema[]) {
 
     }
 
+    constructor(private username : string, private ticketInfo : TicketSchema[]) {}
 
 }
-
-console.log("Hello world from main!!");
