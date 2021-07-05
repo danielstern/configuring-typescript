@@ -39,3 +39,12 @@
     Checkpoint: Add breapoint and run the debugging script. Source maps and breakpoints should be functioning correctly.
 
 5. Implement ESLint
+    a. Install...
+        eslint@4.2.4
+        "@typescript-eslint/eslint-plugin": "^4.28.1"
+        "@typescript-eslint/parser": "^4.28.1"
+
+    b. Create eslintrc
+    c. Add lint npm script
+
+    Checkpoint: Running lint should reveal errors in code style. Functioning of application should not be affected.
