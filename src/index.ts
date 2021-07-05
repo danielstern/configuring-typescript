@@ -16,10 +16,23 @@ export interface TicketAppSchema {
     ticketInfo: TicketSchema[];
     
 }
+
+export interface Action {
+
+    type : string;
+
+}
+export interface TicketQuantityAdjustAction extends Action {
+
+    quantity : number;
+    fieldId : string;
+    
+}
+
 declare global {
 
     interface Window {
-        dispatchAction:any;
+        dispatchAction( action : TicketQuantityAdjustAction) : void;
     }
     
 

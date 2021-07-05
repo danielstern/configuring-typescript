@@ -1,4 +1,4 @@
-import { TicketAppSchema, TicketSchema } from '../';
+import { TicketSchema } from '../';
 import { TicketInfoListDisplay } from './TicketInfoListDisplay'
 
 export class Main {
