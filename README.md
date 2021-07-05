@@ -17,7 +17,7 @@
     
     Checkpoint: Compilation Should Work
 
-3. Compile the application for browsers
+3. Compile the application for browsers a9261a7
     a. Install...
         webpack@5.37.1
         webpack-cli@4.7.0
@@ -31,3 +31,11 @@
     e. Create second TypeScript file for import
 
     Checkpoint: Serve should work with console log combined from two files
+
+4. Implement debugging
+    a. Create .vscode/launch.json
+    b. Install debugger for chrome (only needs to be done once per workstation, no change to source code)
+
+    Checkpoint: Add breapoint and run the debugging script. Source maps and breakpoints should be functioning correctly.
+
+5. Implement ESLint
