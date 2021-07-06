@@ -1,5 +1,10 @@
 # About the Application
 
+A simple TypeScript app built in an extensible scaffold that implements all best practices,
+- Source maps
+- Code quality
+- Debugging with Chrome / VScode
+
 # Step by Step Assembly of the Application
 
 1. General Scaffolding (Non-Platform Dependant) fd9055e
