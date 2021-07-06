@@ -49,7 +49,7 @@
 
     Checkpoint: Running lint should reveal errors in code style. Functioning of application should not be affected.
 
-6. Upgrading Application to Include Views and Model (Non-Interactive, Complexity 1) b8af9b3
+6. Upgrading Application to Include Views and Model (Non-Interactive, Complexity 1) 91cbf3b
     a. Create interfaces directory and define ticketSchema
     b. Create a defaultState for the application importing ticketSchema
     c. Create main.ts component which accepts ticketInfo arrays and renders a simple table
