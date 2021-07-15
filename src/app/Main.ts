@@ -1,4 +1,5 @@
 import { TicketSchema } from '../interfaces';
+import { emphasizeString } from '../../lib/language.js';
 
 export class Main {
     
@@ -16,7 +17,7 @@ export class Main {
               <tbody>
 
                     ${this.ticketInfo.map(ticket => `<tr>
-                        <td class="p-2">${ticket.concertName}</td>
+                        <td class="p-2">${emphasizeString(ticket.concertName, 3)}</td>
                         <td class="p-2">${ticket.price}</td>
                         <td class="p-2">${ticket.quantity}</td>
                     </tr>`).join("")}
