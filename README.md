@@ -1,64 +1,49 @@
 # About the Application
 
-A simple TypeScript app built in an extensible scaffold that implements all best practices,
-- Source maps
-- Code quality
-- Debugging with Chrome / VScode
+This is a simple and clearly-structured web application using the following stack:
 
-# Step by Step Assembly of the Application
+- Node
+- TypeScript
+- Webpack
 
-1. General Scaffolding (Non-Platform Dependant) fd9055e
-    a. Initialize package.json
-    b. Initialize git package and GitIgnore
+It is designed to be easily extended and serve as a powerful teaching aid.
 
-    Checkpoint: None
+## Quick Start
 
-2. Configure the TypeScript Compiler and Compile first File 709a575
-    a. Install...
-        typescript@4.2.4
-    b. reate tsconfig.json
-    c. Create src/index.ts
-    d. Create npm build script: tsc
-    
-    Checkpoint: Compilation Should Work
+Follow these steps to get started:
 
-3. Compile the application for browsers a9261a7
-    a. Install...
-        webpack@5.37.1
-        webpack-cli@4.7.0
-        webpack-dev-server@3.11.2
-        ts-loader@9.2.2
-        http-server@^0.12.3
+1. Clone the repository
 
-    b. Create webpack.config
-    c. Create npm webpack script
-    d. Create public/index.html
-    e. Create second TypeScript file for import
+`git clone git@github.com:danielstern/configuring-typescript.git`
 
-    Checkpoint: Serve should work with console log combined from two files
+2. Open a terminal to the project directory and install dependencies:
 
-4. Implement debugging
-    a. Create .vscode/launch.json
-    b. Install debugger for chrome (only needs to be done once per workstation, no change to source code)
+`npm install`
 
-    Checkpoint: Add breapoint and run the debugging script. Source maps and breakpoints should be functioning correctly.
+3. Finally, open the application in development mode.
 
-5. Implement ESLint a20896bbe
-    a. Install...
-        eslint@4.2.4
-        "@typescript-eslint/eslint-plugin": "^4.28.1"
-        "@typescript-eslint/parser": "^4.28.1"
+`npm run dev`
 
-    b. Create eslintrc
-    c. Add lint npm script
+You can now open the application at the URL shown in the terminal.
 
-    Checkpoint: Running lint should reveal errors in code style. Functioning of application should not be affected.
+## About the Branches
 
-6. Upgrading Application to Include Views and Model (Non-Interactive, Complexity 1) 91cbf3b
-    a. Create interfaces directory and define ticketSchema
-    b. Create a defaultState for the application importing ticketSchema
-    c. Create main.ts component which accepts ticketInfo arrays and renders a simple table
-    d. Import main.ts component into index and render
-    e. Add styles as necessary
+### [master](https://github.com/danielstern/configuring-typescript)
 
-    Checkpoint: Application should run in browser and correctly reflect schema
+Contains the full application, useful for building your own application on top of it, or for reviewing the end point before attempting to recreate it yourself.
+
+### [1-compilation](https://github.com/danielstern/configuring-typescript/tree/1-compilation)
+
+Dependencies are installed and TypeScript can be compiled, but no application has been written.
+
+### [2-browser](https://github.com/danielstern/configuring-typescript/tree/2-browser)
+
+Webpack functionality is added so the TypeScript application can be viewed in the browser. A good starting point for creating an application from a mostly blank slate.
+
+### [3-model-view](https://github.com/danielstern/configuring-typescript/tree/3-model-view)
+
+A simple rendering process has been added, as well as multiple TypeScript components. This is the "complete" branch without any additional dev-ops added.
+
+### [4-libraries](https://github.com/danielstern/configuring-typescript/tree/4-libraries)
+
+The completed model-view application with external .js libraries added. This branch is used as practice for creating and downloading declarations .
